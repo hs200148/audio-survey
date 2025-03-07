@@ -32,12 +32,13 @@
 </head>
 <body>
     <h2>Audio Perception Survey</h2>
-    <form id="surveyForm" action="https://script.google.com/macros/s/AKfycbwb8fbb8MgORM9EsWbKLs_ybGYeD82p0AVC8pk_XWv9eRJcAyCxQXApxDsmFOYk4GEFig/exec" method="POST">
+    <form id="surveyForm">
         
         <script>
             function playAudio(id) {
                 document.getElementById(id).play();
             }
+
             function playReference(id, button) {
                 let audio = document.getElementById(id);
                 audio.play();
@@ -45,6 +46,37 @@
                     button.disabled = true;
                 };
             }
+
+            // Handle the form submission with fetch (sending data as JSON)
+            document.getElementById("surveyForm").addEventListener("submit", function(event) {
+                event.preventDefault(); // Prevent default form submission
+
+                const formData = new FormData(this); // Get the form data
+                const formObject = {}; 
+
+                // Convert form data to an object
+                formData.forEach((value, key) => {
+                    formObject[key] = value;
+                });
+
+                // Send the data as JSON using fetch
+                fetch("https://script.google.com/macros/s/AKfycbwb8fbb8MgORM9EsWbKLs_ybGYeD82p0AVC8pk_XWv9eRJcAyCxQXApxDsmFOYk4GEFig/exec", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json", // Send as JSON
+                    },
+                    body: JSON.stringify(formObject), // Convert to JSON
+                })
+                .then(response => response.json()) // If the server responds with JSON
+                .then(data => {
+                    console.log("Success:", data);
+                    alert("Survey submitted successfully!");
+                })
+                .catch(error => {
+                    console.error("Error:", error);
+                    alert("Error submitting the survey. Please try again.");
+                });
+            });
         </script>
 
         <!-- Audio Questions (Manually Added) -->
