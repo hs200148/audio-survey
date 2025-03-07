@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio Perception Survey</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            max-width: 800px;
+            margin: auto;
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        button {
+            display: block;
+            margin: 10px 0;
+            padding: 10px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+    <h2>Audio Perception Survey</h2>
+    <form id="surveyForm" action="https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec" method="POST">
+        
+        <!-- Audio Questions -->
+        <script>
+            function playAudio(id) {
+                document.getElementById(id).play();
+            }
+            function playReference(id, button) {
+                let audio = document.getElementById(id);
+                audio.play();
+                audio.onended = function() {
+                    button.disabled = true;
+                };
+            }
+        </script>
+
+        <!-- Loop through 12 questions -->
+        <div id="audioQuestions">
+            <script>
+                for (let i = 1; i <= 12; i++) {
+                    document.write(`
+                        <div class="question">
+                            <h3>Enter the number of the note that was out of tune.</h3>
+                            <button type="button" onclick="playAudio('audio${i}')">Play Audio</button>
+                            <audio id="audio${i}" src="audio/audio${i}.mp3"></audio>
+                            <button type="button" onclick="playReference('ref${i}', this)">Play Reference (Once)</button>
+                            <audio id="ref${i}" src="audio/reference.mp3"></audio>
+                            <input type="number" name="q${i}" min="0" required>
+                        </div>
+                    `);
+                }
+            </script>
+        </div>
+
+        <!-- Survey Questions -->
+        <div class="question">
+            <h3>What is your age?</h3>
+            <input type="number" name="age" min="0" required>
+        </div>
+        
+        <div class="question">
+            <h3>Preferred Music Genre</h3>
+            <select name="genre" required>
+                <option value="Classical">Classical</option>
+                <option value="Jazz">Jazz</option>
+                <option value="Rock">Rock</option>
+                <option value="Pop">Pop</option>
+                <option value="Electronic">Electronic</option>
+                <option value="Other">Other</option>
+            </select>
+        </div>
+        
+        <div class="question">
+            <h3>Primary Instrument Played</h3>
+            <input type="text" name="instrument" required>
+        </div>
+        
+        <div class="question">
+            <h3>Years of Playing</h3>
+            <input type="number" name="years_of_playing" min="0" required>
+        </div>
+        
+        <div class="question">
+            <h3>Do you speak a tonal language?</h3>
+            <select name="language_background" required>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit">Submit Survey</button>
+    </form>
+</body>
+</html>
