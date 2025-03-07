@@ -34,7 +34,6 @@
     <h2>Audio Perception Survey</h2>
     <form id="surveyForm" action="https://script.google.com/macros/s/AKfycbwb8fbb8MgORM9EsWbKLs_ybGYeD82p0AVC8pk_XWv9eRJcAyCxQXApxDsmFOYk4GEFig/exec" method="POST">
         
-        <!-- Audio Questions -->
         <script>
             function playAudio(id) {
                 document.getElementById(id).play();
@@ -48,22 +47,114 @@
             }
         </script>
 
-        <!-- Loop through 12 questions -->
-        <div id="audioQuestions">
-            <script>
-                for (let i = 1; i <= 12; i++) {
-                    document.write(`
-                        <div class="question">
-                            <h3>Enter the number of the note that was out of tune.</h3>
-                            <button type="button" onclick="playAudio('audio${i}')">Play Audio</button>
-                            <audio id="audio${i}" src="audio/audio${i}.mp3"></audio>
-                            <button type="button" onclick="playReference('ref${i}', this)">Play Reference (Once)</button>
-                            <audio id="ref${i}" src="audio/reference.mp3"></audio>
-                            <input type="number" name="q${i}" min="0" required>
-                        </div>
-                    `);
-                }
-            </script>
+        <!-- Audio Questions (Manually Added) -->
+        <div class="question">
+            <h3>Enter the number of the note that was out of tune.</h3>
+            <button type="button" onclick="playAudio('audio1')">Play Audio</button>
+            <audio id="audio1" src="PUT_YOUR_AUDIO_FILE_LINK_HERE"></audio>
+            <button type="button" onclick="playReference('ref1', this)">Play Reference (Once)</button>
+            <audio id="ref1" src="PUT_YOUR_REFERENCE_AUDIO_FILE_LINK_HERE"></audio>
+            <input type="number" name="q1" min="0" required>
+        </div>
+
+        <div class="question">
+            <h3>Enter the number of the note that was out of tune.</h3>
+            <button type="button" onclick="playAudio('audio2')">Play Audio</button>
+            <audio id="audio2" src="PUT_YOUR_AUDIO_FILE_LINK_HERE"></audio>
+            <button type="button" onclick="playReference('ref2', this)">Play Reference (Once)</button>
+            <audio id="ref2" src="PUT_YOUR_REFERENCE_AUDIO_FILE_LINK_HERE"></audio>
+            <input type="number" name="q2" min="0" required>
+        </div>
+
+        <div class="question">
+            <h3>Enter the number of the note that was out of tune.</h3>
+            <button type="button" onclick="playAudio('audio3')">Play Audio</button>
+            <audio id="audio2" src="PUT_YOUR_AUDIO_FILE_LINK_HERE"></audio>
+            <button type="button" onclick="playReference('ref2', this)">Play Reference (Once)</button>
+            <audio id="ref2" src="PUT_YOUR_REFERENCE_AUDIO_FILE_LINK_HERE"></audio>
+            <input type="number" name="q2" min="0" required>
+        </div>
+
+        <div class="question">
+            <h3>Enter the number of the note that was out of tune.</h3>
+            <button type="button" onclick="playAudio('audio4')">Play Audio</button>
+            <audio id="audio2" src="PUT_YOUR_AUDIO_FILE_LINK_HERE"></audio>
+            <button type="button" onclick="playReference('ref2', this)">Play Reference (Once)</button>
+            <audio id="ref2" src="PUT_YOUR_REFERENCE_AUDIO_FILE_LINK_HERE"></audio>
+            <input type="number" name="q2" min="0" required>
+        </div>
+
+        <div class="question">
+            <h3>Enter the number of the note that was out of tune.</h3>
+            <button type="button" onclick="playAudio('audio5')">Play Audio</button>
+            <audio id="audio2" src="PUT_YOUR_AUDIO_FILE_LINK_HERE"></audio>
+            <button type="button" onclick="playReference('ref2', this)">Play Reference (Once)</button>
+            <audio id="ref2" src="PUT_YOUR_REFERENCE_AUDIO_FILE_LINK_HERE"></audio>
+            <input type="number" name="q2" min="0" required>
+        </div>
+
+        <div class="question">
+            <h3>Enter the number of the note that was out of tune.</h3>
+            <button type="button" onclick="playAudio('audio6')">Play Audio</button>
+            <audio id="audio2" src="PUT_YOUR_AUDIO_FILE_LINK_HERE"></audio>
+            <button type="button" onclick="playReference('ref2', this)">Play Reference (Once)</button>
+            <audio id="ref2" src="PUT_YOUR_REFERENCE_AUDIO_FILE_LINK_HERE"></audio>
+            <input type="number" name="q2" min="0" required>
+        </div>
+
+        <div class="question">
+            <h3>Enter the number of the note that was out of tune.</h3>
+            <button type="button" onclick="playAudio('audio7')">Play Audio</button>
+            <audio id="audio2" src="PUT_YOUR_AUDIO_FILE_LINK_HERE"></audio>
+            <button type="button" onclick="playReference('ref2', this)">Play Reference (Once)</button>
+            <audio id="ref2" src="PUT_YOUR_REFERENCE_AUDIO_FILE_LINK_HERE"></audio>
+            <input type="number" name="q2" min="0" required>
+        </div>
+
+        <div class="question">
+            <h3>Enter the number of the note that was out of tune.</h3>
+            <button type="button" onclick="playAudio('audio8')">Play Audio</button>
+            <audio id="audio2" src="PUT_YOUR_AUDIO_FILE_LINK_HERE"></audio>
+            <button type="button" onclick="playReference('ref2', this)">Play Reference (Once)</button>
+            <audio id="ref2" src="PUT_YOUR_REFERENCE_AUDIO_FILE_LINK_HERE"></audio>
+            <input type="number" name="q2" min="0" required>
+        </div>
+
+        <div class="question">
+            <h3>Enter the number of the note that was out of tune.</h3>
+            <button type="button" onclick="playAudio('audio9')">Play Audio</button>
+            <audio id="audio2" src="PUT_YOUR_AUDIO_FILE_LINK_HERE"></audio>
+            <button type="button" onclick="playReference('ref2', this)">Play Reference (Once)</button>
+            <audio id="ref2" src="PUT_YOUR_REFERENCE_AUDIO_FILE_LINK_HERE"></audio>
+            <input type="number" name="q2" min="0" required>
+        </div>
+
+        <div class="question">
+            <h3>Enter the number of the note that was out of tune.</h3>
+            <button type="button" onclick="playAudio('audio10')">Play Audio</button>
+            <audio id="audio2" src="PUT_YOUR_AUDIO_FILE_LINK_HERE"></audio>
+            <button type="button" onclick="playReference('ref2', this)">Play Reference (Once)</button>
+            <audio id="ref2" src="PUT_YOUR_REFERENCE_AUDIO_FILE_LINK_HERE"></audio>
+            <input type="number" name="q2" min="0" required>
+        </div>
+
+        <div class="question">
+            <h3>Enter the number of the note that was out of tune.</h3>
+            <button type="button" onclick="playAudio('audio11')">Play Audio</button>
+            <audio id="audio2" src="PUT_YOUR_AUDIO_FILE_LINK_HERE"></audio>
+            <button type="button" onclick="playReference('ref2', this)">Play Reference (Once)</button>
+            <audio id="ref2" src="PUT_YOUR_REFERENCE_AUDIO_FILE_LINK_HERE"></audio>
+            <input type="number" name="q2" min="0" required>
+        </div>
+
+        <!-- Repeat for all 12 questions -->
+        <div class="question">
+            <h3>Enter the number of the note that was out of tune.</h3>
+            <button type="button" onclick="playAudio('audio12')">Play Audio</button>
+            <audio id="audio12" src="PUT_YOUR_AUDIO_FILE_LINK_HERE"></audio>
+            <button type="button" onclick="playReference('ref12', this)">Play Reference (Once)</button>
+            <audio id="ref12" src="PUT_YOUR_REFERENCE_AUDIO_FILE_LINK_HERE"></audio>
+            <input type="number" name="q12" min="0" required>
         </div>
 
         <!-- Survey Questions -->
@@ -100,3 +191,4 @@
     </form>
 </body>
 </html>
+
